@@ -33,23 +33,18 @@ class App extends React.Component {
   }
 
   countFouls = () => {
-    if (this.state.fouls === 1) {
-      let strikesCount = this.state.strikes;
-      strikesCount++;
+    let foulsCount = this.state.fouls;
+    foulsCount++;
+
+    let strikesCount = this.state.strikes;
+    strikesCount++;
+
+    if (this.state.fouls === 1 && this.state.strikes < 2) {
       this.setState({
         fouls: 0,
         strikes: strikesCount
       })
-    } else if (this.state.strikes === 3) {
-      let outsCount = this.state.outs;
-      outsCount++;
-      this.setState({
-        strikes: 0,
-        outs: outsCount
-      })
     } else {
-      let foulsCount = this.state.fouls;
-      foulsCount++;
       this.setState({
         fouls: foulsCount
       })
@@ -71,16 +66,6 @@ class App extends React.Component {
       strikesCount++;
       this.setState({
         strikes: strikesCount
-      })
-    }
-  }
-
-  countOuts = () => {
-    if (this.state.strikes === 3) {
-      let outsCount = this.state.outs;
-      outsCount++;
-      this.setState({
-        outs: outsCount
       })
     }
   }
