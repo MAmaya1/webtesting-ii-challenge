@@ -12,7 +12,22 @@ class App extends React.Component {
     this.state = {
       balls: 0,
       strikes: 0,
-      outs: 0
+      fouls: 0
+    }
+  }
+
+  countBalls = () => {
+    if (this.state.balls === 4) {
+      this.setState({
+        balls: 0,
+        strikes: 0,
+      })
+    } else {
+      let count = this.state.balls;
+      count++;
+      this.setState({
+        balls: count
+      })
     }
   }
 
@@ -23,10 +38,10 @@ class App extends React.Component {
         <Display
           balls = {this.state.balls}
           strikes = {this.state.strikes}
-          outs = {this.state.outs}
+          fouls = {this.state.fouls}
         />
         <Dashboard
-          
+          countBalls = {this.countBalls}
         />
       </div>
     );
