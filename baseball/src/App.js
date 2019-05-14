@@ -11,8 +11,9 @@ class App extends React.Component {
 
     this.state = {
       balls: 0,
+      fouls: 0,
       strikes: 0,
-      fouls: 0
+      outs: 0
     }
   }
 
@@ -31,17 +32,55 @@ class App extends React.Component {
     }
   }
 
+  countFouls = () => {
+    if (this.state.fouls === 2) {
+      let strikesCount = this.state.strikes;
+      strikesCount++;
+      this.setState({
+        fouls: 0,
+        strikes: strikesCount
+      })
+    } else {
+      let foulsCount = this.state.fouls;
+      foulsCount++;
+      this.setState({
+        fouls: foulsCount
+      })
+    }
+  }
+
+  countStrikes = () => {
+    if (this.state.strikes === 3) {
+      let outsCount = this.state.outs;
+      outsCount++;
+      this.setState({
+        balls: 0,
+        fouls: 0,
+        strikes: 0,
+        outs: outsCount
+      })
+    } else {
+      let strikesCount = this.state.strikes;
+      strikesCount++;
+      this.setState({
+        strikes: strikesCount
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Baseball</h1>
         <Display
-          balls = {this.state.balls}
-          strikes = {this.state.strikes}
-          fouls = {this.state.fouls}
+          balls={this.state.balls}
+          strikes={this.state.strikes}
+          fouls={this.state.fouls}
         />
         <Dashboard
-          countBalls = {this.countBalls}
+          countBalls={this.countBalls}
+          countFouls={this.countFouls}
+          countStrikes={this.countStrikes}
         />
       </div>
     );

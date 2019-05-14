@@ -4,8 +4,8 @@ const Display = props => {
     return (
         <div className="display">
             <p><strong>Balls:</strong> {props.balls}</p>
-            <p><strong>Strikes:</strong> {props.strikes}</p>
             <p><strong>Fouls:</strong> {props.fouls}</p>
+            <p><strong>Strikes:</strong> {props.strikes}</p>
         </div>
     )
 }
