@@ -38,5 +38,3 @@ describe('<Dashboard/>', () => {
         getByText(/outs:/i)
     })
 })
-
-// Test data coming into display, test functionality in Dashboard
