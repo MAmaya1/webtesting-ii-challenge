@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'react-testing-library/cleanup-after-each';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

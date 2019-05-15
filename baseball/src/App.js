@@ -70,6 +70,14 @@ class App extends React.Component {
     }
   }
 
+  hit = () => {
+    this.setState({
+      balls: 0,
+      fouls: 0,
+      strikes: 0
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -84,6 +92,7 @@ class App extends React.Component {
           countBalls={this.countBalls}
           countFouls={this.countFouls}
           countStrikes={this.countStrikes}
+          hit={this.hit}
         />
       </div>
     );

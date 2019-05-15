@@ -3,7 +3,7 @@ import React from 'react';
 const Display = props => {
     return (
         <div className="display">
-            <p><strong>Balls:</strong> {props.balls}</p>
+            <p data-testid="balls"><strong>Balls:</strong> {props.balls}</p>
             <p><strong>Fouls:</strong> {props.fouls}</p>
             <p><strong>Strikes:</strong> {props.strikes}</p>
             <p><strong>Outs:</strong> {props.outs}</p>
